@@ -24,7 +24,7 @@ const skillGroups: { category: string; skills: SkillItem[] }[] = [
       { name: "Scikit-learn", logo: simple("scikitlearn") },
       { name: "YOLOv8", logo: ghAvatar(26833433) },
       { name: "OpenCV", logo: simple("opencv") },
-      { name: "spaCy", logo: ghAvatar(17332350) },
+      { name: "spaCy", logo: simple("spacy") },
     ],
   },
   {
