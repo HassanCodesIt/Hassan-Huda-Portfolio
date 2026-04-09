@@ -3,6 +3,7 @@ import { ExternalLink } from "lucide-react";
 
 const devicon = (name: string) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${name}/${name}-original.svg`;
 const simple = (name: string) => `https://cdn.simpleicons.org/${name}`;
+const ghAvatar = (id: number) => `https://avatars.githubusercontent.com/u/${id}?s=40`;
 
 type LogoItem = { type: "img"; src: string; alt: string } | { type: "badge"; label: string };
 
@@ -25,7 +26,8 @@ const projects: Project[] = [
       { type: "img", src: devicon("python"), alt: "Python" },
       { type: "img", src: simple("fastapi"), alt: "FastAPI" },
       { type: "badge", label: "🤗 HuggingFace" },
-      { type: "badge", label: "Groq" },
+      { type: "img", src: simple("groq"), alt: "Groq" },
+      { type: "img", src: ghAvatar(107516996), alt: "ChromaDB" },
     ],
     github: "https://github.com/HassanCodesIt/RAG-Study-Assistant",
   },
@@ -38,7 +40,8 @@ const projects: Project[] = [
       { type: "img", src: devicon("python"), alt: "Python" },
       { type: "img", src: devicon("postgresql"), alt: "PostgreSQL" },
       { type: "badge", label: "Streamlit" },
-      { type: "badge", label: "Groq" },
+      { type: "img", src: simple("groq"), alt: "Groq" },
+      { type: "img", src: ghAvatar(17332350), alt: "spaCy" },
     ],
     github: "https://github.com/HassanCodesIt/Recruitment-management-system",
   },
@@ -49,8 +52,8 @@ const projects: Project[] = [
     tech: ["n8n", "Groq LLM", "LLaMA 3.1", "IMAP", "SMTP"],
     logos: [
       { type: "img", src: simple("n8n"), alt: "n8n" },
-      { type: "badge", label: "Groq" },
-      { type: "img", src: devicon("nodejs"), alt: "Node.js" },
+      { type: "img", src: simple("groq"), alt: "Groq" },
+      { type: "img", src: simple("meta"), alt: "LLaMA" },
     ],
     github: "https://github.com/HassanCodesIt/Email-Customer-support-Agent",
   },
@@ -75,8 +78,8 @@ const projects: Project[] = [
     logos: [
       { type: "img", src: devicon("python"), alt: "Python" },
       { type: "img", src: simple("fastapi"), alt: "FastAPI" },
-      { type: "img", src: devicon("javascript"), alt: "JavaScript" },
-      { type: "badge", label: "OpenCV" },
+      { type: "img", src: ghAvatar(26833433), alt: "YOLOv8" },
+      { type: "img", src: simple("opencv"), alt: "OpenCV" },
     ],
     github: "https://github.com/HassanCodesIt/corn-leaf-disease-detection",
   },
@@ -88,7 +91,7 @@ const projects: Project[] = [
     logos: [
       { type: "img", src: devicon("python"), alt: "Python" },
       { type: "img", src: simple("fastapi"), alt: "FastAPI" },
-      { type: "badge", label: "Groq" },
+      { type: "img", src: simple("groq"), alt: "Groq" },
     ],
     github: "https://github.com/HassanCodesIt/Assignment-Evaluation-Assistant",
   },

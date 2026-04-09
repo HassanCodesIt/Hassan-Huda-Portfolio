@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 
 const devicon = (name: string) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${name}/${name}-original.svg`;
 const simple = (name: string) => `https://cdn.simpleicons.org/${name}`;
+const ghAvatar = (id: number) => `https://avatars.githubusercontent.com/u/${id}?s=40`;
 
 type SkillItem = { name: string; logo?: string; badge?: string };
 
@@ -9,11 +10,11 @@ const skillGroups: { category: string; skills: SkillItem[] }[] = [
   {
     category: "AI / LLM",
     skills: [
-      { name: "Groq", badge: "Groq" },
+      { name: "Groq", logo: simple("groq") },
       { name: "LangChain", logo: simple("langchain") },
       { name: "HuggingFace", badge: "🤗 HuggingFace" },
       { name: "OpenAI", logo: simple("openai") },
-      { name: "LLaMA", badge: "LLaMA" },
+      { name: "LLaMA", logo: simple("meta") },
     ],
   },
   {
@@ -21,9 +22,9 @@ const skillGroups: { category: string; skills: SkillItem[] }[] = [
     skills: [
       { name: "TensorFlow", logo: devicon("tensorflow") },
       { name: "Scikit-learn", logo: simple("scikitlearn") },
-      { name: "YOLOv8", badge: "YOLOv8" },
+      { name: "YOLOv8", logo: ghAvatar(26833433) },
       { name: "OpenCV", logo: simple("opencv") },
-      { name: "spaCy", badge: "spaCy" },
+      { name: "spaCy", logo: ghAvatar(17332350) },
     ],
   },
   {
@@ -32,7 +33,6 @@ const skillGroups: { category: string; skills: SkillItem[] }[] = [
       { name: "Python", logo: devicon("python") },
       { name: "FastAPI", logo: simple("fastapi") },
       { name: "Flask", logo: devicon("flask") },
-      { name: "Node.js", logo: devicon("nodejs") },
     ],
   },
   {
@@ -40,7 +40,7 @@ const skillGroups: { category: string; skills: SkillItem[] }[] = [
     skills: [
       { name: "PostgreSQL", logo: devicon("postgresql") },
       { name: "MySQL", logo: devicon("mysql") },
-      { name: "ChromaDB", badge: "ChromaDB" },
+      { name: "ChromaDB", logo: ghAvatar(107516996) },
     ],
   },
   {
@@ -48,15 +48,6 @@ const skillGroups: { category: string; skills: SkillItem[] }[] = [
     skills: [
       { name: "n8n", logo: simple("n8n") },
       { name: "Zapier", logo: simple("zapier") },
-    ],
-  },
-  {
-    category: "Frontend",
-    skills: [
-      { name: "React", logo: devicon("react") },
-      { name: "HTML5", logo: devicon("html5") },
-      { name: "CSS3", logo: devicon("css3") },
-      { name: "JavaScript", logo: devicon("javascript") },
     ],
   },
 ];
