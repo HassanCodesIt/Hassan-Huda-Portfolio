@@ -78,7 +78,7 @@ const projects: Project[] = [
     logos: [
       { type: "img", src: devicon("python"), alt: "Python" },
       { type: "img", src: simple("fastapi"), alt: "FastAPI" },
-      { type: "img", src: ghAvatar(26833433), alt: "YOLOv8" },
+      { type: "img", src: ghAvatar(26833451), alt: "YOLOv8" },
       { type: "img", src: simple("opencv"), alt: "OpenCV" },
     ],
     github: "https://github.com/HassanCodesIt/corn-leaf-disease-detection",

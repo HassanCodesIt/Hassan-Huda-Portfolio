@@ -22,7 +22,7 @@ const skillGroups: { category: string; skills: SkillItem[] }[] = [
     skills: [
       { name: "TensorFlow", logo: devicon("tensorflow") },
       { name: "Scikit-learn", logo: simple("scikitlearn") },
-      { name: "YOLOv8", logo: ghAvatar(26833433) },
+      { name: "YOLOv8", logo: ghAvatar(26833451) },
       { name: "OpenCV", logo: simple("opencv") },
       { name: "spaCy", logo: simple("spacy") },
     ],
