@@ -1,3 +1,14 @@
-# Welcome to your Lovable project
+# Hassan's AI Canvas
 
-TODO: Document your project here
+A personal portfolio website for Hassan Huda, built with React, Vite, and Tailwind CSS.
+
+## Preview
+
+![Portfolio Screenshot](public/screenshot.png)
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
