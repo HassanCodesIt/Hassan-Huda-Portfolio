@@ -40,7 +40,7 @@ const skillGroups: { category: string; skills: SkillItem[] }[] = [
     skills: [
       { name: "PostgreSQL", logo: devicon("postgresql") },
       { name: "MySQL", logo: devicon("mysql") },
-      { name: "ChromaDB", logo: ghAvatar(107516996) },
+      { name: "ChromaDB", logo: "https://raw.githubusercontent.com/chroma-core/chroma/main/docs/mintlify/images/favicon.svg" },
     ],
   },
   {
