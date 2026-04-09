@@ -1,14 +1,86 @@
 import { motion } from "framer-motion";
 
-const skillGroups = [
-  { category: "Languages", skills: ["Python"] },
-  { category: "AI / ML", skills: ["LangChain", "Groq LLM", "HuggingFace", "OpenAI", "TensorFlow Lite", "YOLOv8", "Scikit-learn", "spaCy", "OpenCV"] },
-  { category: "Databases", skills: ["PostgreSQL", "ChromaDB", "MySQL"] },
-  { category: "Backend", skills: ["FastAPI", "Flask"] },
-  { category: "Frontend", skills: ["React"] },
-  { category: "Automation", skills: ["n8n", "Zapier"] },
-  { category: "Integrations", skills: ["WhatsApp Cloud API", "Zoho CRM", "IMAP", "RAG Pipelines", "Vector Search"] },
+const devicon = (name: string) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${name}/${name}-original.svg`;
+const simple = (name: string) => `https://cdn.simpleicons.org/${name}`;
+
+type SkillItem = { name: string; logo?: string; badge?: string };
+
+const skillGroups: { category: string; skills: SkillItem[] }[] = [
+  {
+    category: "AI / LLM",
+    skills: [
+      { name: "Groq", badge: "Groq" },
+      { name: "LangChain", logo: simple("langchain") },
+      { name: "HuggingFace", badge: "🤗 HuggingFace" },
+      { name: "OpenAI", logo: simple("openai") },
+      { name: "LLaMA", badge: "LLaMA" },
+    ],
+  },
+  {
+    category: "ML / Computer Vision",
+    skills: [
+      { name: "TensorFlow", logo: devicon("tensorflow") },
+      { name: "Scikit-learn", logo: simple("scikitlearn") },
+      { name: "YOLOv8", badge: "YOLOv8" },
+      { name: "OpenCV", logo: simple("opencv") },
+      { name: "spaCy", badge: "spaCy" },
+    ],
+  },
+  {
+    category: "Backend & Frameworks",
+    skills: [
+      { name: "Python", logo: devicon("python") },
+      { name: "FastAPI", logo: simple("fastapi") },
+      { name: "Flask", logo: devicon("flask") },
+      { name: "Node.js", logo: devicon("nodejs") },
+    ],
+  },
+  {
+    category: "Databases & Vector Storage",
+    skills: [
+      { name: "PostgreSQL", logo: devicon("postgresql") },
+      { name: "MySQL", logo: devicon("mysql") },
+      { name: "ChromaDB", badge: "ChromaDB" },
+    ],
+  },
+  {
+    category: "Automation & Workflow",
+    skills: [
+      { name: "n8n", logo: simple("n8n") },
+      { name: "Zapier", logo: simple("zapier") },
+    ],
+  },
+  {
+    category: "Frontend",
+    skills: [
+      { name: "React", logo: devicon("react") },
+      { name: "HTML5", logo: devicon("html5") },
+      { name: "CSS3", logo: devicon("css3") },
+      { name: "JavaScript", logo: devicon("javascript") },
+    ],
+  },
 ];
+
+const SkillTag = ({ skill }: { skill: SkillItem }) => (
+  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-muted text-foreground text-sm font-medium border-glow hover:glow-cyan transition-shadow duration-300 cursor-default">
+    {skill.logo ? (
+      <img
+        src={skill.logo}
+        alt={skill.name}
+        className="w-5 h-5 object-contain"
+        loading="lazy"
+        onError={(e) => {
+          (e.currentTarget as HTMLImageElement).style.display = "none";
+        }}
+      />
+    ) : (
+      <span className="px-1.5 py-0.5 rounded bg-primary/15 text-primary text-[10px] font-bold leading-none">
+        {skill.badge}
+      </span>
+    )}
+    {skill.name}
+  </span>
+);
 
 const SkillsSection = () => (
   <section id="skills" className="py-24 px-6 bg-surface">
@@ -36,17 +108,8 @@ const SkillsSection = () => (
               {group.category}
             </h3>
             <div className="flex flex-wrap gap-2">
-              {group.skills.map((skill, si) => (
-                <motion.span
-                  key={skill}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: gi * 0.05 + si * 0.03 }}
-                  className="px-4 py-2 rounded-lg bg-muted text-foreground text-sm font-medium border-glow hover:glow-cyan transition-shadow duration-300 cursor-default"
-                >
-                  {skill}
-                </motion.span>
+              {group.skills.map((skill) => (
+                <SkillTag key={skill.name} skill={skill} />
               ))}
             </div>
           </motion.div>
