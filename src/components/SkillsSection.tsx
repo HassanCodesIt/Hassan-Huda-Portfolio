@@ -10,7 +10,7 @@ const skillGroups: { category: string; skills: SkillItem[] }[] = [
   {
     category: "AI / LLM",
     skills: [
-      { name: "Groq", logo: simple("groq") },
+      { name: "Groq", logo: ghAvatar(7464134) },
       { name: "LangChain", logo: simple("langchain") },
       { name: "HuggingFace", badge: "🤗 HuggingFace" },
       { name: "OpenAI", logo: simple("openai") },
